@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule ^accueil$ index.php?page=accueil [L]
+
+RewriteRule ^json/([\w-]+)$ index.php?page=json&table=$1 [L]
+RewriteRule ^json/([\w-]+)-([\w-]+)-([\w-]+)$ index.php?page=json&table=$1&email=$2&mdp=$3 [L]

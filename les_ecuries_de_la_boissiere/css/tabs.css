@@ -1,0 +1,14 @@
+.tabs{ margin:7px 0 30px 0; }
+.tabs>div { position:relative; background:#dedccb; overflow:hidden; width:596px;}
+.tab-content { padding:26px 21px 21px 21px; height:195px;}
+.tabs ul.nav {list-style-image:none; margin:0px 0 0px 0px; display:block; overflow:hidden;}
+.tabs ul.nav li {float:left; width:198px; background:#acab9e; line-height:18px;  display:inline-block; text-align:center; margin-right:1px; height:55px;  border-bottom:#f7f5e2 5px solid; }
+.tabs ul.nav li a { font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:18px; color:#fff; line-height:20px; font-weight:normal; display:block; padding:18px 0 20px 0px;}
+.tabs ul.nav li.selected {background:#dedccb; border-bottom:#dedccb 5px solid;}
+.tabs ul.nav li.selected a{ color:#423331;}
+.tabs ul.nav li:hover {background:#dedccb;}
+.tabs ul.nav li:hover a{ color:#423331;}
+
+
+.aligncenter {text-align:center !important;}
+.tab-content ul.list-1 {margin:10px 0 0 21px;}

@@ -1,0 +1,27 @@
+/*Barre Navigateur*/
+.sf-menu {float:left;}
+.sf-menu ul {position:absolute; top:-999px; display:none;}
+.sf-menu li {position:relative; float:left; }
+.sf-menu a {display:block; }
+.sf-menu li:hover ul,.sf-menu li.sfHover ul {z-index:99}
+ul.sf-menu li:hover li ul,ul.sf-menu li.sfHover li ul {top:-999px; display:none;}
+ul.sf-menu li li:hover ul,ul.sf-menu li li.sfHover ul {left:100%; top:0;}
+
+ul.sf-menu>li { margin:0 0 0 80px; line-height:25px;}
+ul.sf-menu>li:first-child{ margin:0 0 0 0px;}
+
+ul.sf-menu>li>a { font-family: Trebuchet MS, sans-serif; font-weight:normal; font-size:13px; line-height:16px; letter-spacing: 0px; color:#caded6; text-transform:uppercase; }
+ul.sf-menu>li.current /*, ul.sf-menu>li.sfHover , ul.sf-menu>li:hover*/ { }
+ul.sf-menu>li.current>a, ul.sf-menu>li.sfHover>a, ul.sf-menu>li>a:hover {color:#76b060; margin-top:0px;}
+
+ul.sf-menu>li>a.sf-with-ul>span.sf-sub-indicator {}
+ul.sf-menu>li.sfHover>a.sf-with-ul>span.sf-sub-indicator {}
+ul.sf-menu>li.current>a.sf-with-ul>span.sf-sub-indicator {}
+
+ul.sf-menu>li>ul {width:60px; background:#fffffa; padding:20px 20px 0px 20px; left:-19px; top:35px; text-transform:uppercase; border-radius:15px;}
+ul.sf-menu>li>ul>li, ul.sf-menu>li.sfHover>ul>li {margin:0px 0 20px 0px;}
+ul.sf-menu>li.sfHover>ul>li>a { font-family:Trebuchet MS, sans-serif; font-weight:normal; font-size:11px; line-height:14px; color:#597d6f; }
+ul.sf-menu>li.sfHover>ul>li:hover, ul.sf-menu li.sfHover>ul>li.sfHover{ }
+ul.sf-menu>li.sfHover>ul>li:hover>a, ul.sf-menu li.sfHover>ul>li.sfHover a{  color:#c66a21;}
+
+
