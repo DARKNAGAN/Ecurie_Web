@@ -10,28 +10,58 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-
 </head>
 <header>
-<!-- Affichage En tête -->
-  <div class="main">
-  	 <h1><a href="home.php"><img src="./images/all/logo.png" alt=""></a></h1>
-<!-- Bouton de Navigation des pages -->	
-    <nav>    
-      <ul class="sf-menu sf-js-enabled">
-  	        <li><a href="home.php">accueil</a></li>
-			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="about_us.php">à propos de nous <span class="caret"></span></a>
-        	    <div class="dropdown-content"> <span class="arrow1"></span>
-					<a href="about_us.php">Le Centre</a>
-					<a href="price_list.php">Tarifs</a>
-					<a href="contact_us.php">Contactez-nous</a>
-                </div></li>
-  	        <li><a href="shop.php">boutique</a></li>
-            <li><a href="news.php">actualités</a></li>
-            <li><a href="event.php">événements</a></li>
-  	  </ul>
-  	   <div class="clear"></div>
-    </nav>
-  </div>
+	<center><a href="accueil.php"><img src="./images/all/logo.png" alt=""></a></center>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+			  <a class="navbar-brand" href="accueil.php">Accueil</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Centre Equestre
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="about-us.php">Le Centre</a>
+					  <a class="dropdown-item" href="tarif.php">Tarifs</a>
+					  <div class="dropdown-divider"></div>
+					  <a class="dropdown-item" href="contact.php">Nos Coordonnées</a>
+					</div>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled" href="boutique.php">Shopping</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled" href="actualite.php">Actualités</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled" href="evenement.php">Evénements</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled" href="pension.php">Pensions</a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Activités
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="poney.php">Poney Club</a>
+					  <a class="dropdown-item" href="ethologie.php">Ethologie</a>
+					  <a class="dropdown-item" href="stage.php">Stages</a>
+					  <a class="dropdown-item" href="balade.php">Balades et Randonnées</a>
+					</div>
+				  </li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+				  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			  </div>
+			</nav>
+		</div>
 </header>
