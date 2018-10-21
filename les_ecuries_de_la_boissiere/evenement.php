@@ -1,5 +1,5 @@
 <?php
-	include_once('./vue/header.php');
-	include_once('./vue/event/index.php');
-	include_once('./vue/footer.php');	
+	include_once('./vue/header.html');
+	include_once('./vue/evenement/index.html');
+	include_once('./vue/footer.html');	
 ?>
