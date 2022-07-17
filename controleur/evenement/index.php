@@ -7,11 +7,11 @@ $eventsAll = get_events(0, 5);
 // Ici, on doit surtout sécuriser l'affichage
 foreach($eventsAll as $cle => $event)
 {
-    $events[$cle]['nomevent'] = ($event['nomevent']);
+    $events[$cle]['nom'] = ($event['nom']);
     $events[$cle]['dateevent'] = ($event['dateevent']);
     $events[$cle]['imageevent'] = ($event['imageevent']);
-    $events[$cle]['lieuevent'] = ($event['lieuevent']);
-    $events[$cle]['descriptionevent'] = ($event['descriptionevent']);
+    $events[$cle]['lieu'] = ($event['lieu']);
+    $events[$cle]['description'] = ($event['description']);
 }
 
 // On affiche la page (vue)

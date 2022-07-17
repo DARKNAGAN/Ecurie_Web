@@ -15,7 +15,7 @@ switch($action)
 			<section id="content" class="page-content">
 				<div class="container text-center">
 					<h2>Profil de <?php echo stripslashes(htmlspecialchars($data['pseudo'])); ?></h2><br>
-						<img src="./images/avatars/<?php echo $data['imageeleve']; ?>" alt="Acun avatar" /><br>
+						<img src=".<?php echo $data['imageeleve']; ?>" alt="Acun avatar" /><br>
 						<p class="text-2" ><strong>Adresse E-Mail : </strong>
 							<a class=link2 href="mailto:<?php echo stripslashes($data['adressemail']); ?>"> <?php echo stripslashes(htmlspecialchars($data['adressemail'])); ?></a><br/><br>
 							Ce membre est inscrit depuis le <strong><?php echo date('d-m-Y', strtotime(str_replace('/','-',$data['dateenregistre']))); ?></strong><br/><br/>
@@ -56,7 +56,7 @@ switch($action)
 									<input type="text" name="localisation" id="localisation" value="<?php echo stripslashes($data['adresse']); ?>" />
 							</fieldset><br>
 							<fieldset><legend class=colorbold marg3 pad1>Profil sur le forum</legend>
-								Avatar actuel <img src="./images/avatars/<?php echo $data['imageeleve'];?>" alt="pas d avatar" /><br><br>
+								Avatar actuel <img src=".<?php echo $data['imageeleve'];?>" alt="pas d avatar" /><br><br>
 								<label class="labelI" for="avatar">Changer mon avatar</label><br>
 									<input type="file" name="avatar" id="avatar" /><br>(Taille max : 10 ko)<br><br>
 								<label><input type="checkbox" name="delete" value="Delete" /> Supprimer mon avatar</label>
@@ -114,7 +114,7 @@ switch($action)
 			{
 				$maxsize = 30072; //Poid de l'image
 				$maxwidth = 100; //Largeur de l'image
-				$maxheight = 100; //Longueur de l'image
+				$maxheight = 150; //Longueur de l'image
 				//Liste des extensions valides
 				$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png', 'bmp' );
 				if ($_FILES['avatar']['error'] > 0)
