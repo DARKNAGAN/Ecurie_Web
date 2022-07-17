@@ -1,5 +1,4 @@
-# Projet_Ecurie_Web
+# Ecurie_Web
 
 Projet d'amélioration d'un site web d'une écurie avec une connexion a une base de donnée
-
-En attente d'évolution
+Site web modèle pour développement web
