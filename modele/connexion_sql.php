@@ -1,9 +1,9 @@
 <?php
 
-// Connexion à la base de données
+// Connexion ï¿½ la base de donnï¿½es
 try
 {
-    $bdd = new PDO('mysql:host=nasccb:3307;dbname=Ecurie', 'christian', 'F8orP#NRqd#oKLQ#',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+    $bdd = new PDO('mysql:host=nasccb:PORT;dbname=Ecurie', 'USER', 'PASS',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 }
 catch(Exception $e)
 {

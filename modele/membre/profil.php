@@ -4,7 +4,7 @@ function get_MemberInfo()
 	global $bdd;
 	$membre = isset($_GET['m'])?(int) $_GET['m']:'';
 	//On récupère les infos du membre
-	$req = $bdd->prepare('SELECT pseudo, imageeleve, adressemail, dateenregistre, adresse FROM Eleve WHERE ideleve=:membre');
+	$req = $bdd->prepare('SELECT pseudo, imageeleve, adressemail, dateenregistre, adresse, prenom, nom, age, galop FROM Eleve WHERE ideleve=:membre');
 	$req->bindValue(':membre',$membre, PDO::PARAM_INT);
 	$req->execute();
 	$data = $req->fetch();
@@ -14,8 +14,9 @@ function get_MemberInfoId()
 {
 	global $bdd;
 	$id=(isset($_SESSION['ideleve']))?(int) $_SESSION['ideleve']:0;
+
 	//On prend les infos du membre
-	$req = $bdd->prepare('SELECT pseudo, adressemail,adresse,imageeleve FROM Eleve WHERE ideleve=:id');
+	$req = $bdd->prepare('SELECT pseudo, imageeleve, adressemail, adresse, prenom, nom, age, galop FROM Eleve WHERE ideleve=:id');
 	$req->bindValue(':id',$id,PDO::PARAM_INT);
 	$req->execute();
 	$data = $req->fetch();
@@ -27,6 +28,17 @@ function get_checkMail()
 	$id=(isset($_SESSION['ideleve']))?(int) $_SESSION['ideleve']:0;
 	//On commence donc par récupérer le mail
 	$req = $bdd->prepare('SELECT adressemail FROM Eleve WHERE ideleve =:id'); 
+	$req->bindValue(':id',$id,PDO::PARAM_INT);
+	$req->execute();
+	$data = $req->fetch();
+	return $data;
+}
+function get_Pseudo()
+{
+	global $bdd;
+	$id=(isset($_SESSION['ideleve']))?(int) $_SESSION['ideleve']:0;
+	//On commence donc par récupérer le pseudo
+	$req = $bdd->prepare('SELECT pseudo FROM Eleve WHERE ideleve =:id'); 
 	$req->bindValue(':id',$id,PDO::PARAM_INT);
 	$req->execute();
 	$data = $req->fetch();
@@ -44,11 +56,11 @@ function get_checkCopyMail()
 	$req->CloseCursor();
 	return $mail_free;
 }
-function post_UpdateAvatar()
+function post_UpdateAvatar($pseudo)
 {
 	global $bdd;
 	$id=(isset($_SESSION['ideleve']))?(int) $_SESSION['ideleve']:0;
-	$nomavatar=move_avatar($_FILES['avatar']);
+	$nomavatar=edit_avatar($_FILES['avatar'], $pseudo );
 	$req = $bdd->prepare('UPDATE Eleve SET imageeleve = :avatar WHERE ideleve = :id');
 	$req->bindValue(':avatar',$nomavatar,PDO::PARAM_STR);
 	$req->bindValue(':id',$id,PDO::PARAM_INT);
@@ -72,7 +84,7 @@ function post_UpdateMember()
 	$email = $_POST['email'];
 	$localisation = $_POST['localisation'];
 	$req = $bdd->prepare('UPDATE Eleve SET mdp = :mdp, adressemail=:mail, adresse=:loc WHERE ideleve=:id');
-	$req->bindValue(':mdp',$pass,PDO::PARAM_INT);
+	$req->bindValue(':mdp',$pass,PDO::PARAM_STR);
 	$req->bindValue(':mail',$email,PDO::PARAM_STR);
 	$req->bindValue(':loc',$localisation,PDO::PARAM_STR);
 	$req->bindValue(':id',$id,PDO::PARAM_INT);

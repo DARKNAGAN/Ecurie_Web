@@ -27,14 +27,26 @@ function post_Registre()
 	$pseudo=$_POST['pseudo'];
 	$pass = /*md5*/($_POST['password']);
 	$email = $_POST['email'];
-	$nomavatar=(!empty($_FILES['avatar']['size']))?move_avatar($_FILES['avatar']):'';
+	mkdir("./images/avatars/".$pseudo."/", 0700);
+	$nomavatar=(!empty($_FILES['avatar']['size']))?edit_avatar($_FILES['avatar'], $pseudo):'';
 	$localisation = $_POST['localisation'];
-	$req = $bdd->prepare('INSERT INTO Eleve (pseudo, mdp, adressemail, imageeleve, adresse, dateenregistre)
-						VALUES (:pseudo, :pass, :email, :nomavatar, :localisation, NOW())');
+	$prenom = $_POST['prenom'];
+	$nom = $_POST['nom'];
+	$sexe = $_POST['sexe'];
+	$age = $_POST['age'];
+	$galop = $_POST['galop'];
+	$req = $bdd->prepare('INSERT INTO Eleve (pseudo, mdp, adressemail, imageeleve, adresse, prenom, nom, sexe, age, galop, dateenregistre)
+						VALUES (:pseudo, :pass, :email, :nomavatar, :localisation, :prenom, :nom, :sexe, :age, :galop, NOW())');
 	$req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
-	$req->bindValue(':pass', $pass, PDO::PARAM_INT);
+	$req->bindValue(':pass', $pass, PDO::PARAM_STR);
 	$req->bindValue(':email', $email, PDO::PARAM_STR);
 	$req->bindValue(':nomavatar', $nomavatar, PDO::PARAM_STR);
 	$req->bindValue(':localisation', $localisation, PDO::PARAM_STR);
+	$req->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+	$req->bindValue(':nom', $nom, PDO::PARAM_STR);
+	$req->bindValue(':sexe', $sexe, PDO::PARAM_STR);
+	$req->bindValue(':age', $age, PDO::PARAM_INT);
+	$req->bindValue(':galop', $galop, PDO::PARAM_INT);
+
 	$req->execute();
 }
